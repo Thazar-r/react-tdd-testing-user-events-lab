@@ -107,11 +107,11 @@ test("the page shows information the user types into the name and email address 
   const emailInput = screen.getByLabelText(/email/i);
   const submitButton = screen.getByRole("button", { name: /submit/i });
 
-  fireEvent.change(nameInput, { target: { value: "John Doe" } });
-  fireEvent.change(emailInput, { target: { value: "john.doe@example.com" } });
+  fireEvent.change(nameInput, { target: { value: "Thazar" } });
+  fireEvent.change(emailInput, { target: { value: "thazar@example.com" } });
   fireEvent.click(submitButton);
 
-  expect(await screen.findByText(/thank you, john doe!/i)).toBeInTheDocument();
+  expect(await screen.findByText(/thank you, thazar!/i)).toBeInTheDocument();
 });
 
 test("checked status of checkboxes changes when user clicks them", () => {
